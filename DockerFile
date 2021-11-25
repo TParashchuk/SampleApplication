@@ -1,0 +1,10 @@
+FROM arm32v7/debian:buster
+
+WORKDIR /sample-service
+
+RUN apt-get update -y
+RUN apt-get install -y python3
+
+ADD SampleApplication.py /sample-service
+
+CMD ["python3", "-u", "SampleApplication.py"]
